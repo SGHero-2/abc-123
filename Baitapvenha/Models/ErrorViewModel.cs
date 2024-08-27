@@ -1,4 +1,4 @@
-namespace Baitap03.Models
+namespace Baitapvenha.Models
 {
     public class ErrorViewModel
     {

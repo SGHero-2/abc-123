@@ -1,8 +1,8 @@
-using Baitap03.Models;
+using Baitapvenha.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Baitap03.Controllers
+namespace Baitapvenha.Controllers
 {
     public class HomeController : Controller
     {
