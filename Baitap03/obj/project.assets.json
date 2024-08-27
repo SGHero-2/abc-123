@@ -5709,9 +5709,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\Baitap03.csproj",
-      "projectName": "Baitap03",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\Baitap03.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\BaiTapVeNha.csproj",
+      "projectName": "BaiTapVeNha",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\BaiTapVeNha.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\obj\\",
       "projectStyle": "PackageReference",
