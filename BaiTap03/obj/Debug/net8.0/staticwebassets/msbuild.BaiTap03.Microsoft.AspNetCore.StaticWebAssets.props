@@ -50,9 +50,15 @@
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\img\z5759998867667_f656275216991f92867ba0a7c0377d9f.jpg))">
       <SourceType>Package</SourceType>
+<<<<<<< HEAD:Baitap03/obj/Debug/net8.0/staticwebassets/msbuild.Baitap03.Microsoft.AspNetCore.StaticWebAssets.props
+      <SourceId>Baitap03</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Baitap03</BasePath>
+=======
       <SourceId>BaiTap03</SourceId>
       <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
       <BasePath>_content/BaiTap03</BasePath>
+>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/obj/Debug/net8.0/staticwebassets/msbuild.BaiTap03.Microsoft.AspNetCore.StaticWebAssets.props
       <RelativePath>img/z5759998867667_f656275216991f92867ba0a7c0377d9f.jpg</RelativePath>
       <AssetKind>All</AssetKind>
       <AssetMode>All</AssetMode>

@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<<< HEAD:Baitapvenha/Baitapvenha.sln
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Baitapvenha", "Baitapvenha.csproj", "{44A7C3A4-DC2C-4791-B0B1-7F95296CAC29}"
+========
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BaiTap03", "BaiTap03.csproj", "{8157993A-1B55-4E0C-A0A3-CF8E841D419A}"
+>>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/BaiTap03.sln
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +15,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<<< HEAD:Baitapvenha/Baitapvenha.sln
+		{44A7C3A4-DC2C-4791-B0B1-7F95296CAC29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44A7C3A4-DC2C-4791-B0B1-7F95296CAC29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44A7C3A4-DC2C-4791-B0B1-7F95296CAC29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44A7C3A4-DC2C-4791-B0B1-7F95296CAC29}.Release|Any CPU.Build.0 = Release|Any CPU
+========
 		{8157993A-1B55-4E0C-A0A3-CF8E841D419A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8157993A-1B55-4E0C-A0A3-CF8E841D419A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8157993A-1B55-4E0C-A0A3-CF8E841D419A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8157993A-1B55-4E0C-A0A3-CF8E841D419A}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/BaiTap03.sln
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+<<<<<<<< HEAD:Baitapvenha/Baitapvenha.sln
+		SolutionGuid = {00D58A1F-074B-4325-9C15-1340BDC1C132}
+========
 		SolutionGuid = {BB75D5F3-AAB5-4D6B-AF60-06DBAE361B52}
+>>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/BaiTap03.sln
 	EndGlobalSection
 EndGlobal

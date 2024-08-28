@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD:Baitap03/obj/project.nuget.cache
+  "dgSpecHash": "pBrFdTxCRWE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\Baitap03.csproj",
+=======
   "dgSpecHash": "ZEcol5KVqJI=",
   "success": true,
   "projectFilePath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\BaiTap03\\BaiTap03.csproj",
+>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/obj/project.nuget.cache
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

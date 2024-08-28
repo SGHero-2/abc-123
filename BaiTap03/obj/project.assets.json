@@ -5778,9 +5778,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD:Baitap03/obj/project.assets.json
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\Baitap03.csproj",
+      "projectName": "Baitap03",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\Baitap03.csproj",
+=======
       "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\BaiTap03\\BaiTap03.csproj",
       "projectName": "BaiTap03",
       "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\BaiTap03\\BaiTap03.csproj",
+>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/obj/project.assets.json
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\BaiTap03\\obj\\",
       "projectStyle": "PackageReference",

@@ -13,11 +13,19 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+<<<<<<< HEAD:Baitap03/obj/Debug/net8.0/staticwebassets.pack.json
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\wwwroot\\img\\z5759998867667_f656275216991f92867ba0a7c0377d9f.jpg",
+      "PackagePath": "staticwebassets\\img\\z5759998867667_f656275216991f92867ba0a7c0377d9f.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\Baitap03\\wwwroot\\js\\site.js",
+=======
       "Id": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\BaiTap03\\wwwroot\\img\\z5759998867667_f656275216991f92867ba0a7c0377d9f.jpg",
       "PackagePath": "staticwebassets\\img\\z5759998867667_f656275216991f92867ba0a7c0377d9f.jpg"
     },
     {
       "Id": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\BaiTap03\\wwwroot\\js\\site.js",
+>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/obj/Debug/net8.0/staticwebassets.pack.json
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {

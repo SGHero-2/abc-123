@@ -3,6 +3,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+<<<<<<< HEAD:Baitap03/Program.cs
+
+=======
+>>>>>>> 4f8957bbe46d4074b3d01fb824c9df9ff24f9974:BaiTap03/Program.cs
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
