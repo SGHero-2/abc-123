@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Baitapvenha02.props" />
+</Project>
