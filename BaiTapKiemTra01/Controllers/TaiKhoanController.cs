@@ -21,8 +21,8 @@ namespace BaiTapKiemTra01.Controllers
         {
             var sanpham = new SanPhamViewModel()
             {
-                TenSP = "Trà",
-                GiaBan = 1000,
+                TenSP = "Điện Thoại",
+                GiaBan = 10000000,
                 AnhMoTa = "/images/iphone-screen.png"
             };
             return View(sanpham);
