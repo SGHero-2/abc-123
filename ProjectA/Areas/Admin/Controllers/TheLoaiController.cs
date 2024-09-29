@@ -2,7 +2,7 @@
 using ProjectA.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ProjectA.Controllers
+namespace ProjectA.Areas.Admin.Controllers
 {
     [Area("Admin")]
     public class TheLoaiController : Controller
@@ -72,8 +72,13 @@ namespace ProjectA.Controllers
                 return NotFound();
             }
             var theloai = _db.TheLoai.Find(id);
+            if (theloai == null)
+            {
+                return NotFound();
+            }
             return View(theloai);
         }
+
 
         [HttpPost]
         public IActionResult DeleteConfirm(int id)
@@ -93,11 +98,18 @@ namespace ProjectA.Controllers
         {
             if (id == 0)
             {
+                return NotFound(); 
+            }
+
+            var theloai = _db.TheLoai.Find(id);
+
+            if (theloai == null)
+            {
                 return NotFound();
             }
-            var theloai = _db.TheLoai.Find(id);
             return View(theloai);
         }
+
 
         [HttpGet]
         public IActionResult Search(string searchString)
