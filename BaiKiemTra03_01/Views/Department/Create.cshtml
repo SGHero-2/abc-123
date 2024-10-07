@@ -1,0 +1,12 @@
+﻿@model BaiKiemTra03_01.Models.Department
+
+<h2>Thêm phòng ban</h2>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="DepartmentName"></label>
+        <input asp-for="DepartmentName" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-success">Thêm</button>
+    <a asp-action="Index" class="btn btn-secondary">Quay lại</a>
+</form>

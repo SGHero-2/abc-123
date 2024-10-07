@@ -1,0 +1,38 @@
+﻿@model IEnumerable<BaiKiemTra03_01.Models.Employee>
+
+<h2>Danh sách nhân viên</h2>
+
+<!-- Nút Thêm -->
+<a asp-controller="Employee" asp-action="Create" class="btn btn-primary mb-2">Thêm nhân viên</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên nhân viên</th>
+            <th>Chức vụ</th>
+            <th>Phòng ban</th>
+            <th>Ngày bắt đầu làm việc</th>
+            <th>Hành động</th> <!-- Cột Hành động -->
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var employee in Model)
+        {
+            <tr>
+                <td>@employee.EmployeeName</td>
+                <td>@employee.Position</td>
+                <td>@employee.DepartmentId</td>
+                <td>@employee.HireDate.ToShortDateString()</td>
+                <td>
+                    <!-- Nút Sửa -->
+                    <a asp-controller="Employee" asp-action="Edit" asp-route-id="@employee.EmployeeId" class="btn btn-warning">Sửa</a>
+
+                    <!-- Nút Xóa -->
+                    <form asp-controller="Employee" asp-action="Delete" asp-route-id="@employee.EmployeeId" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

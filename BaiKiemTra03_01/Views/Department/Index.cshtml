@@ -1,0 +1,32 @@
+﻿@model IEnumerable<BaiKiemTra03_01.Models.Department>
+
+<h2>Danh sách phòng ban</h2>
+
+<!-- Nút Thêm -->
+<a asp-controller="Department" asp-action="Create" class="btn btn-primary mb-2">Thêm phòng ban</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên phòng ban</th>
+            <th>Hành động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var department in Model)
+        {
+            <tr>
+                <td>@department.DepartmentName</td>
+                <td>
+                    <!-- Nút Sửa -->
+                    <a asp-controller="Department" asp-action="Edit" asp-route-id="@department.DepartmentId" class="btn btn-warning">Sửa</a>
+
+                    <!-- Nút Xóa -->
+                    <form asp-controller="Department" asp-action="Delete" asp-route-id="@department.DepartmentId" method="post" style="display:inline;">
+                        <button type="submit" class="btn btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa?');">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
