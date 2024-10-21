@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7V7j/JFOoWmk2ZkKSRvpSImf0mfafJtk0Aum7VD3cfQ=",
+  "Hash": "9sZiMg85GbtQk7Nb9xg6KOQmmKs/H5VhQ8ZSjYq4yJk=",
   "Source": "ProjectA",
   "BasePath": "_content/ProjectA",
   "Mode": "Default",
@@ -1231,6 +1231,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\ProjectA\\wwwroot\\img\\pngtree-electronic-store-logo-vector-png-image_7481118.png",
+      "SourceId": "ProjectA",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\ProjectA\\wwwroot\\",
+      "BasePath": "_content/ProjectA",
+      "RelativePath": "img/pngtree-electronic-store-logo-vector-png-image_7481118.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\pngtree-electronic-store-logo-vector-png-image_7481118.png"
     },
     {
       "Identity": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\ProjectA\\wwwroot\\js\\site.js",

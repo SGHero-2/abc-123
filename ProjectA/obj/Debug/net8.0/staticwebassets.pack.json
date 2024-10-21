@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\ProjectA\\wwwroot\\img\\pngtree-electronic-store-logo-vector-png-image_7481118.png",
+      "PackagePath": "staticwebassets\\img\\pngtree-electronic-store-logo-vector-png-image_7481118.png"
+    },
+    {
       "Id": "C:\\Users\\Admin\\Documents\\GitHub\\abc-123\\ProjectA\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

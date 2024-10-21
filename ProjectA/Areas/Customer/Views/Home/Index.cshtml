@@ -15,11 +15,13 @@
         {
             <div class="col-3">
                 <div class="card" style="width: 18rem;">
-                    <a asp-action="Details" asp-route-id="@item.Id">
+                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
                         <img src="@item.ImageUrl" alt="Product image" class="product-image" style="width: 100%; height: 200px; object-fit: cover;">
                     </a>
                     <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
+                        <h5 class="product-title">
+                            <a asp-action="Details" asp-route-sanphamId="@item.Id">@item.Name</a>
+                        </h5>
                         <h6 class="card-title">@item.Price</h6>
                         <p class="card-text">@item.Description</p>
                         <div class="row">
