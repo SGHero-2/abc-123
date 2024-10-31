@@ -1,0 +1,30 @@
+﻿@model IEnumerable<ProjectA.Models.ChiTietHoaDon>
+
+<h2>Chi Tiết Đơn Hàng</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Hóa Đơn ID</th>
+            <th>Sản Phẩm ID</th>
+            <th>Số Lượng</th>
+            <th>Giá Sản Phẩm</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HoaDonId</td>
+                <td>@item.SanPhamId</td>
+                <td>@item.Quantity</td>
+                <td>@item.ProductPrice</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.HoaDonId" class="btn btn-primary btn-sm">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@item.HoaDonId" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,49 +1,281 @@
 ﻿@model IEnumerable<ProjectA.Models.SanPham>
 
-<div class="container">
-    <h1>Danh Sách Sản Phẩm</h1>
-
-    <form asp-action="Danhsach" method="get">
-        <div class="row mb-3">
-            <div class="col-md-4">
-                <input type="text" name="searchString" class="form-control" placeholder="Tìm kiếm theo tên sản phẩm" />
-            </div>
-            <div class="col-md-4">
-                <select name="sortOrder" class="form-control">
-                    <option value="">Sắp xếp theo</option>
-                    <option value="name_desc">Tên: Z - A</option>
-                    <option value="price">Giá: Thấp đến Cao</option>
-                    <option value="price_desc">Giá: Cao đến Thấp</option>
-                </select>
-            </div>
-            <div class="col-md-4">
-                <button type="submit" class="btn btn-primary">Tìm Kiếm</button>
-            </div>
+<!-- Slideshow Section -->
+<div id="productSlideshow" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" style="margin-top: 25px;">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.asus.com/events/eventES/eventspic/1549_1900.jpg" class="d-block w-100" alt="Promo Image 1" style="max-width: 100%; height: 400px; margin: 0 auto;">
         </div>
-    </form>
-
-    <div class="row">
-        @foreach (var item in Model)
-        {
-            <div class="col-3">
-                <div class="card" style="width: 15rem;">
-                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
-                        <img src="@item.ImageUrl" alt="Product image" class="card-img-top" />
-                    </a>
-                    <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <h6 class="card-title">@item.Price</h6>
-                        <div class="row">
-                            <div class="col-6">
-                                <a href="#" class="btn btn-primary">Thêm vào yêu thích &#10084;</a>
+        <div class="carousel-item">
+            <img src="https://selular.id/wp-content/uploads/2023/02/KEREN-ABIS-Ini-deretan-laptop-gaming-ROG-terbaru-tahun-2023-shorts-1.jpg" class="d-block w-100" alt="Promo Image 2" style="max-width: 100%; height: 400px; margin: 0 auto;">
+        </div>
+        <div class="carousel-item">
+            <img src="https://nguyencongpc.vn/media/news/0208_36d7cc2b5faf9df1c4be.jpg" class="d-block w-100" alt="Promo Image 3" style="max-width: 100%; height: 400px; margin: 0 auto;">
+        </div>
+        <div class="carousel-item">
+            <img src="https://nout.uz/wp-content/uploads/2023/03/ROG-Banner.jpg" class="d-block w-100" alt="Promo Image 4" style="max-width: 100%; height: 400px; margin: 0 auto;">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#productSlideshow" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#productSlideshow" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </a>
+</div>
+<hr />
+<div class="container">
+    <!-- Phần Laptop Gam -->
+    <div class="container product-container" style="margin-top: 75px; position: relative;">
+        <h2 class="text-center">Laptop Gam</h2>
+        <div class="row">
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 start-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-left: 20px;" id="prevBtnLaptopGam">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+            <div class="col-12" style="overflow: hidden; padding: 0 3rem;">
+                <div class="border p-3" style="border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <div class="d-flex" id="product-container-laptopgam" style="scroll-behavior: smooth; width: 100%; overflow-x: hidden;">
+                        @foreach (var item in Model.Where(p => p.TheLoai != null && p.TheLoai.Name == "Laptop Gam"))
+                        {
+                            <div class="flex-shrink-0" style="min-width: 15rem; margin-right: 10px;">
+                                <div class="card text-center" style="width: 15rem; height: 24rem; margin: auto;">
+                                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
+                                        <img src="@item.ImageUrl" alt="Product image" class="product-image card-img-top">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        <h6 class="card-title text-danger">@item.Price.ToString("N0") đ</h6>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-6">
-                                <a href="#" class="btn btn-danger">Mua Hàng</a>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
             </div>
-        }
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 end-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-right: 20px;" id="nextBtnLaptopGam">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
     </div>
+
+    <!-- Mã JavaScript cho phần Laptop Gam -->
+    <script>
+        const productContainerLaptopGam = document.getElementById('product-container-laptopgam');
+        const scrollAmountLaptopGam = 200; // Số pixel để cuộn
+
+        document.getElementById('prevBtnLaptopGam').onclick = function () {
+            productContainerLaptopGam.scrollBy({ left: -scrollAmountLaptopGam, behavior: 'smooth' });
+        };
+
+        document.getElementById('nextBtnLaptopGam').onclick = function () {
+            productContainerLaptopGam.scrollBy({ left: scrollAmountLaptopGam, behavior: 'smooth' });
+        };
+    </script>
+    <!-- Phần Tai Nghe -->
+    <div class="container product-container" style="margin-top: 75px; position: relative;">
+        <h2 class="text-center">Tai Nghe</h2>
+        <div class="row">
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 start-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-left: 20px;" id="prevBtnTaiNghe">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+            <div class="col-12" style="overflow: hidden; padding: 0 3rem;">
+                <div class="border p-3" style="border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <div class="d-flex" id="product-container-tainghe" style="scroll-behavior: smooth; width: 100%; overflow-x: hidden;">
+                        @foreach (var item in Model.Where(p => p.TheLoai != null && p.TheLoai.Name == "Tai Nghe"))
+                        {
+                            <div class="flex-shrink-0" style="min-width: 15rem; margin-right: 10px;">
+                                <div class="card text-center" style="width: 15rem; height: 24rem; margin: auto;">
+                                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
+                                        <img src="@item.ImageUrl" alt="Product image" class="product-image card-img-top">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        <h6 class="card-title text-danger">@item.Price.ToString("N0") đ</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 end-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-right: 20px;" id="nextBtnTaiNghe">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mã JavaScript cho phần Tai Nghe -->
+    <script>
+        const productContainerTaiNghe = document.getElementById('product-container-tainghe');
+        const scrollAmountTaiNghe = 200; // Số pixel để cuộn
+
+        document.getElementById('prevBtnTaiNghe').onclick = function () {
+            productContainerTaiNghe.scrollBy({ left: -scrollAmountTaiNghe, behavior: 'smooth' });
+        };
+
+        document.getElementById('nextBtnTaiNghe').onclick = function () {
+            productContainerTaiNghe.scrollBy({ left: scrollAmountTaiNghe, behavior: 'smooth' });
+        };
+    </script>
+    <!-- Phần Chuột Gam -->
+    <div class="container product-container" style="margin-top: 75px; position: relative;">
+        <h2 class="text-center">Chuột Gam</h2>
+        <div class="row">
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 start-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-left: 20px;" id="prevBtnChuotGam">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+            <div class="col-12" style="overflow: hidden; padding: 0 3rem;">
+                <div class="border p-3" style="border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <div class="d-flex" id="product-container-chuotgam" style="scroll-behavior: smooth; width: 100%; overflow-x: hidden;">
+                        @foreach (var item in Model.Where(p => p.TheLoai != null && p.TheLoai.Name == "Chuột Gam"))
+                        {
+                            <div class="flex-shrink-0" style="min-width: 15rem; margin-right: 10px;">
+                                <div class="card text-center" style="width: 15rem; height: 24rem; margin: auto;">
+                                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
+                                        <img src="@item.ImageUrl" alt="Product image" class="product-image card-img-top">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        <h6 class="card-title text-danger">@item.Price.ToString("N0") đ</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 end-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-right: 20px;" id="nextBtnChuotGam">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mã JavaScript cho phần Chuột Gam -->
+    <script>
+        const productContainerChuotGam = document.getElementById('product-container-chuotgam');
+        const scrollAmountChuotGam = 200; // Số pixel để cuộn
+
+        document.getElementById('prevBtnChuotGam').onclick = function () {
+            productContainerChuotGam.scrollBy({ left: -scrollAmountChuotGam, behavior: 'smooth' });
+        };
+
+        document.getElementById('nextBtnChuotGam').onclick = function () {
+            productContainerChuotGam.scrollBy({ left: scrollAmountChuotGam, behavior: 'smooth' });
+        };
+    </script>
+    <!-- Phần Pad Chuột -->
+    <div class="container product-container" style="margin-top: 75px; position: relative;">
+        <h2 class="text-center">Pad Chuột</h2>
+        <div class="row">
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 start-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-left: 20px;" id="prevBtnPadChuot">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+            <div class="col-12" style="overflow: hidden; padding: 0 3rem;">
+                <div class="border p-3" style="border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <div class="d-flex" id="product-container-padchuot" style="scroll-behavior: smooth; width: 100%; overflow-x: hidden;">
+                        @foreach (var item in Model.Where(p => p.TheLoai != null && p.TheLoai.Name == "Pad Chuột"))
+                        {
+                            <div class="flex-shrink-0" style="min-width: 15rem; margin-right: 10px;">
+                                <div class="card text-center" style="width: 15rem; height: 28rem; margin: auto;">
+                                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
+                                        <img src="@item.ImageUrl" alt="Product image" class="product-image card-img-top">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        <h6 class="card-title text-danger">@item.Price.ToString("N0") đ</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 end-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-right: 20px;" id="nextBtnPadChuot">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mã JavaScript cho phần Pad Chuột -->
+    <script>
+        const productContainerPadChuot = document.getElementById('product-container-padchuot');
+        const scrollAmountPadChuot = 200; // Số pixel để cuộn
+
+        document.getElementById('prevBtnPadChuot').onclick = function () {
+            productContainerPadChuot.scrollBy({ left: -scrollAmountPadChuot, behavior: 'smooth' });
+        };
+
+        document.getElementById('nextBtnPadChuot').onclick = function () {
+            productContainerPadChuot.scrollBy({ left: scrollAmountPadChuot, behavior: 'smooth' });
+        };
+    </script>
+    <!-- Phần Microphone -->
+    <div class="container product-container" style="margin-top: 75px; position: relative;">
+        <h2 class="text-center">Microphone</h2>
+        <div class="row">
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 start-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-left: 20px;" id="prevBtnMicrophone">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            </div>
+            <div class="col-12" style="overflow: hidden; padding: 0 3rem;">
+                <div class="border p-3" style="border: 1px solid #ccc; border-radius: 5px; overflow: hidden;">
+                    <div class="d-flex" id="product-container-microphone" style="scroll-behavior: smooth; width: 100%; overflow-x: hidden;">
+                        @foreach (var item in Model.Where(p => p.TheLoai != null && p.TheLoai.Name == "Microphone"))
+                        {
+                            <div class="flex-shrink-0" style="min-width: 15rem; margin-right: 10px;">
+                                <div class="card text-center" style="width: 15rem; height: 24rem; margin: auto;">
+                                    <a asp-action="Details" asp-route-sanphamId="@item.Id">
+                                        <img src="@item.ImageUrl" alt="Product image" class="product-image card-img-top">
+                                    </a>
+                                    <div class="card-body">
+                                        <h5 class="card-title">@item.Name</h5>
+                                        <h6 class="card-title text-danger">@item.Price.ToString("N0") đ</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <div>
+                <a href="javascript:void(0);" class="position-absolute top-50 end-0 translate-middle-y" style="z-index: 1; font-size: 2rem; padding-right: 20px;" id="nextBtnMicrophone">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mã JavaScript cho phần Microphone -->
+    <script>
+        const productContainerMicrophone = document.getElementById('product-container-microphone');
+        const scrollAmountMicrophone = 200; // Số pixel để cuộn
+
+        document.getElementById('prevBtnMicrophone').onclick = function () {
+            productContainerMicrophone.scrollBy({ left: -scrollAmountMicrophone, behavior: 'smooth' });
+        };
+
+        document.getElementById('nextBtnMicrophone').onclick = function () {
+            productContainerMicrophone.scrollBy({ left: scrollAmountMicrophone, behavior: 'smooth' });
+        };
+    </script>
+
 </div>

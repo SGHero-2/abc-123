@@ -1,57 +1,102 @@
-﻿/* Điều chỉnh kích thước font */
-html {
-    font-size: 14px;
-    position: relative;
-    min-height: 100%;
+﻿/* Đặt lại lề và padding cho toàn trang */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
 }
 
-@media (min-width: 768px) {
-    html {
-        font-size: 16px;
+/* Footer */
+footer {
+    background-color: #333;
+    color: #00FFFF;
+}
+
+    footer h5 {
+        color: #00FFFF;
     }
+
+    footer a {
+        color: #00FFFF;
+        transition: color 0.3s;
+    }
+
+        footer a:hover {
+            color: #ff5733;
+        }
+
+    footer .btn-danger {
+        background-color: #ff5733;
+        border-color: #ff5733;
+        transition: background-color 0.3s;
+    }
+
+        footer .btn-danger:hover {
+            background-color: #e14a1f;
+        }
+
+/* Navbar */
+.navbar {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Điều chỉnh hộp đổ bóng cho các thành phần khi focus */
-.btn:focus,
-.btn:active:focus,
-.btn-link.nav-link:focus,
-.form-control:focus,
-.form-check-input:focus {
-    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    /* Style cho các nút điều hướng */
+    .navbar .nav-link {
+        border: 2px solid transparent;
+        padding: 8px 15px;
+        border-radius: 8px;
+        transition: color 0.3s, border-color 0.3s;
+        color: white;
+    }
+
+        .navbar .nav-link:hover {
+            color: #ff5733;
+            border-color: #ff5733;
+        }
+
+/* Icon mạng xã hội */
+.social-icons-bottom-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
 }
 
-/* Thiết lập chiều cao tối thiểu cho body */
-body {
-    margin-bottom: 60px;
-}
+    .social-icons-bottom-right a {
+        display: inline-block;
+        font-size: 24px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+        color: inherit;
+    }
 
-<style >
+        .social-icons-bottom-right a:hover {
+            transform: scale(1.1);
+        }
+
+/* Khung hiển thị SlideShow */
 .slideshow-container {
-    max-width: 1000px;
-    position: relative;
+    max-width: 100%;
     margin: auto;
-    background-color: #8B4513; /* Thay đổi màu nền thành nâu */
+    overflow: hidden;
+    background-color: #8B4513;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .mySlides {
     display: none;
 }
 
+/* Hiệu ứng fade cho Slide */
 .fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4;
-    }
-
-    to {
-        opacity: 1;
-    }
+    animation: fade 1.5s;
 }
 
 @keyframes fade {
@@ -64,6 +109,7 @@ body {
     }
 }
 
+/* Chấm cho slideshow */
 .dot {
     height: 15px;
     width: 15px;
@@ -78,8 +124,118 @@ body {
     background-color: #717171;
 }
 
+/* Khung sản phẩm */
 .product-container {
-    margin-top: 100px; /* Khoảng cách giữa slideshow và danh sách sản phẩm */
+    margin-top: 100px;
 }
 
-</style >
+.product-item {
+    min-height: 400px; /* Đặt chiều cao tối thiểu cho các sản phẩm */
+    box-sizing: border-box;
+    margin-bottom: 100%;
+}
+
+.product-image {
+    height: 200px; /* Cố định chiều cao hình ảnh */
+    object-fit: cover;
+}
+
+.product-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Form đăng nhập */
+.container-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #f0f2f5;
+    animation: containerFlyIn 0.8s ease forwards;
+    opacity: 0;
+    max-width: 500px;
+    margin: auto;
+    padding: 1px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-form {
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h2, h3 {
+    text-align: center;
+}
+
+.form-control {
+    border-radius: 20px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+/* Style nút đăng nhập */
+.btn-login {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    width: 100%;
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 1.1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+    .btn-login:hover {
+        background-color: #0056b3;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+.login-links a {
+    color: #6c757d;
+    text-decoration: none;
+}
+
+    .login-links a:hover {
+        text-decoration: underline;
+    }
+
+/* Hiệu ứng bay lên cho form đăng nhập */
+@keyframes containerFlyIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Nút điều hướng cảnh báo */
+.btn-warning {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 100;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}

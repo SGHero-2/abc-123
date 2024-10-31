@@ -8,18 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjectA.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-
-    <style>
-        html, body {
-            margin: 0; /* Bỏ margin cho html và body */
-            padding: 0; /* Bỏ padding cho html và body */
-            height: 100%; /* Đảm bảo chiều cao của body 100% */
-        }
-
-        footer {
-            margin-bottom: 0; /* Bỏ khoảng cách dưới cho footer */
-        }
-    </style>
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
 </head>
 <body>
     <header>
@@ -33,24 +22,40 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                    <ul class="navbar-nav flex-grow-1"; style="font-size: 20px">
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Index">Trang Chủ</a>
+                        </li>
+                        @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle text-white" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Admin
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="adminDropdown">
+                                    <li>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="TheLoai" asp-action="Index">Thể Loại</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="SanPham" asp-action="Index">Sản Phẩm</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item" asp-area="Admin" asp-controller="DonHang" asp-action="Index">Đơn Hàng</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="GioiThieu">Giới Thiệu</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="Admin" asp-controller="TheLoai" asp-action="Index">TheLoai</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="Admin" asp-controller="SanPham" asp-action="Index">SanPham</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Home" asp-action="Danhsach">Danh Sách Sản Phẩm</a>
                         </li>
                         <vc:the-loai></vc:the-loai>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="GioHang" asp-action="Index">GioHang</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="GioHang" asp-action="Index">Giỏ Hàng</a>
                         </li>
                     </ul>
-
-                   
-
                     <partial name="_LoginPartial" />
                 </div>
             </div>
@@ -60,17 +65,13 @@
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
-
         </main>
     </div>
-
-
 
     <section id="contact">
         <footer id="footer" class="py-5 bg-dark text-light">
             <div class="container">
                 <div class="row">
-                    <!-- Address Column -->
                     <div class="col-md-3">
                         <h5>Address</h5>
                         <p><i class="fa fa-map-marker"></i> Location</p>
@@ -78,21 +79,19 @@
                         <p><i class="fa fa-envelope"></i> demo@gmail.com</p>
                         <div class="social-icons">
                             <a href="https://www.facebook.com" target="_blank">
-                                <i class="fab fa-facebook-f" style="font-size:24px; margin-right: 10px;"></i>
+                                <i class="fab fa-facebook-f"></i>
                             </a>
                             <a href="https://www.twitter.com" target="_blank">
-                                <i class="fab fa-twitter" style="font-size:24px; margin-right: 10px;"></i>
+                                <i class="fab fa-twitter"></i>
                             </a>
                             <a href="https://www.linkedin.com" target="_blank">
-                                <i class="fab fa-linkedin" style="font-size:24px; margin-right: 10px;"></i>
-                            </a>
+                                <i class="fab fa-linkedin"></i>
+      -                      </a>
                             <a href="https://www.instagram.com" target="_blank">
-                                <i class="fab fa-instagram" style="font-size:24px;"></i>
+                                <i class="fab fa-instagram"></i>
                             </a>
                         </div>
                     </div>
-
-                    <!-- Links Column -->
                     <div class="col-md-3">
                         <h5>Links</h5>
                         <ul class="list-unstyled">
@@ -103,14 +102,10 @@
                             <li><a href="#" class="text-light">Contact Us</a></li>
                         </ul>
                     </div>
-
-                    <!-- Info Column -->
                     <div class="col-md-3">
                         <h5>Info</h5>
-                        <p>Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful.</p>
+                        <p>Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words.</p>
                     </div>
-
-                    <!-- Subscribe Column -->
                     <div class="col-md-3">
                         <h5>Subscribe</h5>
                         <form action="#" method="post">
@@ -119,7 +114,6 @@
                         </form>
                     </div>
                 </div>
-
                 <div class="text-center mt-4">
                     <p>&copy; 2024 All Rights Reserved By Free Html Templates</p>
                 </div>
@@ -127,12 +121,29 @@
         </footer>
     </section>
 
+    <div class="social-icons-bottom-right">
+        <a href="https://www.facebook.com" target="_blank" class="invert">
+            <img src="~/images/facebook-logo-facebook-icon-transparent-free-png.webp" alt="Facebook" style="width: 55px; height: 55px;">
+        </a>
+        <a href="https://zalo.me" target="_blank" class="zalo">
+            <img src="~/images/zalo-logo.png" alt="Zalo" style="width: 50px; height: 50px;">
+        </a>
+        <a href="https://www.messenger.com" target="_blank" class="invert">
+            <img src="~/images/logo-512.webp" alt="Messenger" style="width: 45px; height: 45px;">
+        </a>
+        <a href="https://www.youtube.com" target="_blank" class="invert">
+            <img src="~/images/1384060.png" alt="Youtube" style="width: 40px; height: 40px;">
+        </a>
+    </div>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 
-    <!-- FontAwesome for the search icon -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
+    <a href="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" target="_blank" style="text-decoration: none;">
+        <button class="btn btn-warning">Nhấn vào đây để nhận ưu đãi đặc biệt!</button>
+    </a>
+
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

@@ -22,8 +22,8 @@ namespace ProjectA.Areas.Customer.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<SanPham> sanPham = _db.SanPham.Include("TheLoai").ToList();
-            return View(sanPham);
+            var products = _db.SanPham.Include(p => p.TheLoai).ToList(); // Kiểm tra có include TheLoai
+            return View(products);
         }
 
         public IActionResult Danhsach(string sortOrder, string searchString)
@@ -85,7 +85,6 @@ namespace ProjectA.Areas.Customer.Controllers
             var identity = (ClaimsIdentity)User.Identity;
             var claim = identity.FindFirst(ClaimTypes.NameIdentifier);
             giohang.ApplicationUserId = claim.Value;
-
             // Thêm sản phẩm vào giỏ hàng
             _db.GioHang.Add(giohang);
             _db.SaveChanges();
@@ -100,8 +99,11 @@ namespace ProjectA.Areas.Customer.Controllers
             IEnumerable<SanPham> sanpham = _db.SanPham.Include("TheLoai")
                 .Where(sp => sp.TheLoai.Id == id)
                 .ToList();
-            return View("Index", sanpham);
+            return View("Danhsach", sanpham);
         }
-
+        public IActionResult GioiThieu()
+        {
+            return View();
+        }
     }
 }
